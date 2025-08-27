@@ -7,11 +7,11 @@ import { LoggedLayouts } from './layouts/logged-layouts/logged-layouts';
 
 export const routes: Routes = [
     {
-        path: "",
+        path: "login",
         component: Login
     },
     {
-        path:"layouts",
+        path:"",
         component:LoggedLayouts,
         children:[
                 {
