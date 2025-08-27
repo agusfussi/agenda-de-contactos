@@ -1,3 +1,7 @@
+Este es un proyecto de agenda de contactos de la universidad austral
+
+Hecho por Agustin Fussi 2025
+
 # TestAngular
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.6.
