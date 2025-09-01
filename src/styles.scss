@@ -38,14 +38,19 @@ body {
 }
 
 .imput-btns {
-    background-color: rgb(17, 28, 57);
-    border-radius: 25px;
+    background-color: #32206d;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #ffffff;
     box-shadow: none;
     border-style: none;
+}
+
+.border-circular{
+    /* lo saqu'e de ese link https://developer.mozilla.org/es/docs/Web/CSS/border-top-left-radius */
+    border-bottom-left-radius: 15px; 
+    border-bottom-right-radius: 15px;
 }
 
 .imput-btns :hover{
@@ -81,6 +86,26 @@ a{
     margin: 0;
     padding: 0;
 }
+
 p{
     margin: 0;
+}
+
+.pad-text-in{
+    padding: 6px;
+}
+
+.small-pic{
+    width: 120px;
+    height: 120px;
+}
+#conntact-img-position{
+    position: relative;
+    top: -105px;
+    right: 30px;
+    margin: 0;
+}
+.achicador{
+    height: 60px;
+    width: 62px;
 }
