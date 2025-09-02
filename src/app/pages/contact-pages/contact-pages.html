@@ -1,6 +1,4 @@
-<p>contact-pages works!</p>
-<a routerLink="/login">login</a>
-
+<body>
 <div>
     <span>Nombre</span>
     <span>Telefono</span>
@@ -12,4 +10,5 @@
     @for (contacto of contactos; track $index) {
     <app-contact-list-item [contacto]="contacto" ></app-contact-list-item>
     }
-</ul>
+</ul>    
+</body>

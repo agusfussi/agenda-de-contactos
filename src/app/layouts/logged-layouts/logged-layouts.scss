@@ -1,0 +1,41 @@
+//https://www.w3schools.com/css/css_navbar_vertical.asp
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 250px;
+  background-color: #f1f1f1;
+}
+
+li a {
+  display: block;
+  color: rgb(255, 255, 255);
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+/* Change the link and background color on hover */
+li a:hover {
+  background-color: #555555;
+  color: white;
+}
+
+// no se com hacerlo en este lenguage todavia
+.active {
+  background-color: #04AA6D;
+  color: white;
+}
+// esto
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 130px;
+  background-color: #000000;
+  height: 100%; /* Full height */
+  position: fixed; /* Make it stick, even on scroll */
+  overflow: auto;/* Enable scrolling if the sidenav has too much content */
+  left: 0px; 
+  bottom: -1px;
+}
