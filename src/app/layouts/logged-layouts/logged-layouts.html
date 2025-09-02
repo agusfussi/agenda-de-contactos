@@ -1,17 +1,26 @@
 <div>
     <!--Inspiracion para la barra lateral https://www.w3schools.com/css/css_navbar_vertical.asp -->
-    <ul>
-        <li>
-            <a href="contact-pages">Home</a>
-        </li>
-        <br>
-        <li>
-            <a href="contact-details">Contacts-Detail-page</a>
-        </li>
-        <br>
-        <li>
-            <a href="/login">Login</a>
-        </li>
-    </ul>
+    <header>
+
+    </header>
+    <div id="mySidebar" class="sidebar" [ngStyle]="{ 'width': isSidebarOpen ? '250px' : '0' }">
+        <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+        <ul>
+            <li>
+                <a href="contact-pages">Home</a>
+            </li>
+            <br>
+            <li>
+                <a href="contact-details">Contacts-Detail-page</a>
+            </li>
+            <br>
+            <li>
+                <a href="/login">Login</a>
+            </li>
+        </ul>
+    </div>
+    <div id="main" >
+        <button class="openbtn" (click)="openNav()">&#9776; Open Sidebar</button>
+    </div>
 </div>
 <router-outlet />
