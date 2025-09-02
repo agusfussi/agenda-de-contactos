@@ -1,14 +1,19 @@
 <body>
-<div>
-    <span>Nombre</span>
-    <span>Telefono</span>
-    <span>Email</span>
-    <span>Grupos</span>
-    <span>Acciones</span>
-</div>
-<ul>
-    @for (contacto of contactos; track $index) {
-    <app-contact-list-item [contacto]="contacto" ></app-contact-list-item>
-    }
-</ul>    
+    <div>
+        <table class="fondo-azulclaro">
+            <tr>
+                <th>Nombre</th>
+                <th>Telefono</th>
+                <th>Email</th>
+                <th>Grupos</th>
+                <th>Acciones</th>
+            </tr>
+        </table>
+        <input id="add-contact-button" class="fondo-azulclaro" type="button" value="+">
+    </div>
+    <ul>
+        @for (contacto of contactos; track $index) {
+        <app-contact-list-item [contacto]="contacto"></app-contact-list-item>
+        }
+    </ul>
 </body>

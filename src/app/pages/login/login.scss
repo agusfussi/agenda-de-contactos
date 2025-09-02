@@ -5,3 +5,21 @@ section{
 a{
     text-decoration: none;
 }
+
+.small-pic{
+    width: 120px;
+    height: 120px;
+}
+
+.imput-btns :hover{
+    transition: 2.5ms;
+    background-color: #ffffff;
+}
+
+
+#conntact-img-position{
+    position: relative;
+    top: -105px;
+    right: 25px;
+    margin: 0;
+}

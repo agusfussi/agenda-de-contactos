@@ -1,0 +1,39 @@
+//https://www.w3schools.com/html/html_table_sizes.asp
+
+table {
+    table-layout: fixed;
+    width: 60%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    background-color: #20243b;
+    border-radius: 12px;
+    overflow: hidden;
+    /* hace que los bordes redondeados se apliquen bien */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+th {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 12px;
+}
+
+/* Celdas */
+td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 15px;
+    text-align: left;
+}
+
+#small-cell {
+    width: 8%;
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Hover */
+tr:hover {
+    background-color:  #32206d;
+}

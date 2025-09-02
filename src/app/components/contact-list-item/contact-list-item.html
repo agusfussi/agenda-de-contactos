@@ -1,11 +1,24 @@
-<p>contact-list-item works!</p>
-    <li>
-        <span>{{contacto().firstName}}</span>
-        <span>{{contacto().number}}</span>
-        <span>{{contacto().email}}</span>
-         <span>-</span>
-         @if (contacto().company === true) {
-            ⭐
-         }
-        <span>-</span>
-    </li>
+<!-- todo lo saque de aca y lo fui modificando https://www.w3schools.com/html/html_table_sizes.asp -->
+
+<table>
+    <tr>
+        <td>{{contacto().firstName}}</td>
+        <td class="center">{{contacto().number}}</td>
+        <td>{{contacto().email}}</td>
+        <td></td>
+        <td id="small-cell">@if (contacto().company === true) {✔️}</td>
+    </tr>
+</table>
+
+
+<!-- lista original hecha en clases
+<li>
+    <span>{{contacto().firstName}}</span>
+    <span>{{contacto().number}}</span>
+    <span>{{contacto().email}}</span>
+    <span>-</span>
+    @if (contacto().company === true) {
+    ⭐
+    }
+    <span>-</span> 
+</li> -->
