@@ -1,5 +1,6 @@
 <body>
     <div>
+        <!-- <p>logeado = {{authService}}</p> -->
         <table class="fondo-azulclaro">
             <tr>
                 <th>Nombre</th>
@@ -9,11 +10,42 @@
                 <th>Acciones</th>
             </tr>
         </table>
-        <input id="add-contact-button" class="fondo-azulclaro" type="button" value="+">
+        <button (click)="createContact(newContactForm.value)" id="add-contact-button" class="fondo-azulclaro">+</button>
     </div>
     <ul>
-        @for (contacto of contactos; track $index) {
+        @for (contacto of contactService.contactos; track $index) {
         <app-contact-list-item [contacto]="contacto"></app-contact-list-item>
         }
     </ul>
+    <form (ngSubmit)="contactService.createContact(newContactForm.value)" #newContactForm="ngForm">
+        <div>
+            <label for="firstName">Nombre</label>
+            <input id="firstName" name="firstName" ngModel type="text">
+        </div>
+        <div>
+            <label for="surname">Apellido</label>
+            <input id="surname" name="lastName" type="text" ngModel>
+        </div>
+        <div>
+            <label for="direction">Direccion</label>
+            <input id="direction" name="address" type="text" ngModel>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="text" ngModel>
+        </div>
+        <div>
+            <label for="phone">Telefono</label>
+            <input id="phone" name="number" type="text" ngModel>
+        </div>
+        <div>
+            <label for="company">Empresa</label>
+            <input id="company" name="company" type="checkbox" ngModel>
+        </div>
+        <div>
+            <label for="image">URL de Imagen</label>
+            <input id="image"  type="text" ngModel>
+        </div>
+        <button>+</button>
+    </form>
 </body>

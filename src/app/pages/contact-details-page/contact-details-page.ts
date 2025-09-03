@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { AuthService } from '../../services/auth-service';
 
 @Component({
   selector: 'app-contact-details-page',
@@ -8,5 +9,5 @@ import { RouterModule } from '@angular/router';
   styleUrl: './contact-details-page.scss'
 })
 export class ContactDetailsPage {
-
+ loggedService = inject(AuthService)
 }

@@ -4,10 +4,10 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-logged-layouts',
-  standalone: true,                    // <- importante si usás imports en el decorator
+  standalone: true,                    
   imports: [CommonModule, RouterOutlet],
   templateUrl: './logged-layouts.html',
-  styleUrls: ['./logged-layouts.scss']  // <- nota: "styleUrls" (plural)
+  styleUrls: ['./logged-layouts.scss'] 
 })
 export class LoggedLayouts {
   // estado y métodos del sidebar (ahora están en la misma clase que la plantilla)

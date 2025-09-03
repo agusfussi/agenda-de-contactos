@@ -4,5 +4,10 @@ export interface Contact {
     addres: string,
     email: string,
     number: string,
-    company?: boolean// es opional
+    id: string,
+    image: string,
+    isFavorite?: boolean,// es opional
+    company: string,
 }
+
+export type NewContact = Omit<Contact, "id">
