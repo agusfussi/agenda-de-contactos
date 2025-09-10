@@ -10,11 +10,9 @@
                 <th>Acciones</th>
             </tr>
         </table>
-        <ul class="menu">
-            <li class="con-sub">
-                <button (click)="createContact(newContactForm.value)" id="add-contact-button"
-                    class="fondo-azulclaro">+</button>
-                <!-- <ul class="submenu">
+
+        <button (click)="createContact(newContactForm.value)" id="add-contact-button" class="fondo-azulclaro">+</button>
+        <!-- <ul class="submenu">
                     <form (ngSubmit)="contactService.createContact(newContactForm.value)" #newContactForm="ngForm">
                         <div>
                             <label for="firstName">Nombre</label>
@@ -47,8 +45,7 @@
                         <button>+</button>
                     </form>
                 </ul> -->
-            </li>
-        </ul>
+
     </div>
     <ul>
         @for (contacto of contactService.contactos; track $index) {

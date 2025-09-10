@@ -4,17 +4,34 @@
             <div class="achicador">
                 <img class="small-pic" id="conntact-img-position" src="contact-logo.png" alt="">
             </div>
-            <form>
-                <input class="centrado margin-up-down-5 redonda padding-5 no-border" type="text" matInput type="email"
-                    placeholder="user">
-                <input class="centrado margin-up-down-12 redonda padding-5 no-border" type="text" placeholder="password">
-            </form>
-            <p class="margin-up-down-5">¿No tenes cuenta?</p>
-            <a class="margin-down-12" href="register">registrate acá</a><!-- aca va el link al register -->
-        </div>
-        <div class="centrado">
+            <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+                <input id="email" name="email" type="email" id="email" ngModel #email="ngModel" required="true"
+                    autocomplete="email" class="centrado margin-up-down-5 redonda padding-5 no-border" type="text"
+                    matInput type="email" placeholder="user">
+                @if (email.invalid && !email.pristine) {
+                <p class="error">Debe colocar un correo electrónico.</p>
+                }
+                <input class="centrado margin-up-down-12 redonda padding-5 no-border" type="password" id="password"
+                    name="password" type="password" ngModel #password="ngModel" minlength="4"
+                    autocomplete="current-password" placeholder="password">
+                @if (password.invalid && !password.pristine) {
+                <p class="error">Debe colocar una contraseña de al menos 4 caracteres.</p>
+                }
+
+                <p class="margin-up-down-5">¿No tenes cuenta?</p>
+                <a class="margin-down-12" href="register">registrate acá</a><!-- aca va el link al register -->
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="centrado">
                     <!-- va a remplazar al link en un futuro <input  class="imput-btns border-circular small-button" href="contact-pages" type="button" value="login"> -->
-                    <a class="imput-btns border-circular small-button" href="contact-pages" type="button" value="login">Login</a>
+                    <button class="imput-btns border-circular small-button" type="button" value="login">Login</button>
+                    @if (errorLogin) {
+                    <p class="error">Datos de sesión incorrectos, intente nuevamente.</p>
+                    }
                 </div>
+            </form>
+        </div>
     </div>
 </section>

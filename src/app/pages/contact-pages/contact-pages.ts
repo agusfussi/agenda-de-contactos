@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ContactListItem } from '../../components/contact-list-item/contact-list-item';
 import { AuthService } from '../../services/auth-service';
@@ -13,7 +13,10 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './contact-pages.html',
   styleUrl: './contact-pages.scss'
 })
-export class ContactPages {
+export class ContactPages implements OnInit {
+ ngOnInit(): void {
+    this.contactService.getContacts
+ }
 
  authService = inject(AuthService)
 
