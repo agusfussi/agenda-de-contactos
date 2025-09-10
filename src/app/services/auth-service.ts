@@ -4,6 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
+  createUser(nuevoUser: any) {
+    throw new Error('Method not implemented.');
+  }
   
   logged:boolean = false
 
