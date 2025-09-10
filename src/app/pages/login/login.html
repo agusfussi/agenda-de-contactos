@@ -20,13 +20,12 @@
 
                 <p class="margin-up-down-5">¿No tenes cuenta?</p>
                 <a class="margin-down-12" href="register">registrate acá</a><!-- aca va el link al register -->
-                <br>
-                <br>
-                <br>
-                <br>
                 <div class="centrado">
                     <!-- va a remplazar al link en un futuro <input  class="imput-btns border-circular small-button" href="contact-pages" type="button" value="login"> -->
-                    <button class="imput-btns border-circular small-button" type="button" value="login">Login</button>
+                    <button class="imput-btns border-circular small-button" value="login" type="submit">Login</button>
+                    @if(isLoading){
+                    <app-spinner *ngIf="isLoading"></app-spinner>
+                    }
                     @if (errorLogin) {
                     <p class="error">Datos de sesión incorrectos, intente nuevamente.</p>
                     }

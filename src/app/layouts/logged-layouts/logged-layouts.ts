@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { AuthService } from '../../services/auth-service';
 
 @Component({
   selector: 'app-logged-layouts',
@@ -12,6 +13,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 export class LoggedLayouts {
   // estado y métodos del sidebar (ahora están en la misma clase que la plantilla)
   isSidebarOpen = false;
+  authService = inject(AuthService)
 
   openNav() {
     this.isSidebarOpen = true;

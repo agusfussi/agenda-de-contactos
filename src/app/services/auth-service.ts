@@ -1,43 +1,41 @@
 import { inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-// Define LoginData type
-export interface LoginData {
-  username: string;
-  password: string;
-}
-
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  loggeado: boolean = false;
+  router = inject(Router);
+  token: null | string = localStorage.getItem("token");
   createUser(nuevoUser: any) {
     throw new Error('Method not implemented.');
   }
-  router = inject(Router)
-  logged: boolean = false;
-  token: null | string = localStorage.getItem("token");
 
-  async login(loginData: LoginData) {
-    this.logged = true
-    const res = fetch("https://agenda-api.somee.com/api/authentication/authenticate",
+  async login(loginData: any) {
+    const res = await fetch("https://agenda-api.somee.com/api/authentication/authenticate",
       {
         method: "POST",
-        headers: {'Content-Type': 'application/json'},
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(loginData)
       }
     )
-    if ((await res).ok) {
-      const data = await (await res).json();
-      this.token = data.token;
-      localStorage.setItem("token", this.token ?? "");
+   if (res.ok) {
       this.router.navigate(["/"])
+      this.token = await res.text();
+      localStorage.setItem("token", this.token);
     }
-    console.log(res);
+    console.log("Respuesta del back", res);
   }
 
+
   logeout() {
-    this.logged = false
+    this.token = null
+    this.router.navigate(["/login"])
+  }
+
+  getToken() {
+    return this.token;
   }
 
 }
