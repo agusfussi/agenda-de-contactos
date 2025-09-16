@@ -9,20 +9,20 @@
                     autocomplete="email" class="centrado margin-up-down-5 redonda padding-5 no-border" type="text"
                     matInput type="email" placeholder="user">
                 @if (email.invalid && !email.pristine) {
-                <p class="error">Debe colocar un correo electrónico.</p>
+                <p class="error-up">Debe colocar un correo electrónico.</p>
                 }
                 <input class="centrado margin-up-down-12 redonda padding-5 no-border" type="password" id="password"
                     name="password" type="password" ngModel #password="ngModel" minlength="4"
                     autocomplete="current-password" placeholder="password">
                 @if (password.invalid && !password.pristine) {
-                <p class="error">Debe colocar una contraseña de al menos 4 caracteres.</p>
+                <p class="error-mid">Debe colocar una contraseña de al menos 4 caracteres.</p>
                 }
 
                 <p class="margin-up-down-5">¿No tenes cuenta?</p>
                 <a class="margin-down-12" href="register">registrate acá</a><!-- aca va el link al register -->
-                <div class="centrado">
+                <div class="centrado ">
                     <!-- va a remplazar al link en un futuro <input  class="imput-btns border-circular small-button" href="contact-pages" type="button" value="login"> -->
-                    <button class="imput-btns border-circular small-button" value="login" type="submit">Login</button>
+                    <button class="imput-btns border-circular small-button positionflex-input" value="login" type="submit">Login</button>
                     @if(isLoading){
                     <app-spinner *ngIf="isLoading"></app-spinner>
                     }

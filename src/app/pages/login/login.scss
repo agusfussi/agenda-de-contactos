@@ -16,10 +16,39 @@ a{
     background-color: #ffffff;
 }
 
+.positionflex-input{
+    position: relative;
+    top: 40px;
+}
+
 
 #conntact-img-position{
     position: relative;
     top: -105px;
     right: 25px;
     margin: 0;
+}
+
+.error-mid {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  font-size: smaller;
+  color: red;
+}
+
+.error-up {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  font-size: smaller;
+  color: red;
+}
+
+.error {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  font-size: smaller;
+  color: red;
 }
