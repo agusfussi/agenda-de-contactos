@@ -52,7 +52,7 @@
         <app-contact-list-item [contacto]="contacto"></app-contact-list-item>
         }
     </ul>
-    <div class="centrado margin-up-200 border-circular fondo-azulclaro" id="new-contact-form">
+    <div class="borde-circular" id="new-contact-form">
         <form (ngSubmit)="contactService.createContact(newContactForm.value)" #newContactForm="ngForm">
             <div>
                 <label for="firstName">Nombre</label>
@@ -82,7 +82,6 @@
                 <label for="image">URL de Imagen</label>
                 <input id="image" type="text" ngModel>
             </div>
-            <button>+</button>
         </form>
     </div>
 </body>
