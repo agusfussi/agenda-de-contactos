@@ -17,7 +17,7 @@
                 <label for="password">Contraseña</label>
                 <input id="password" name="password" type="password" ngModel>
             </div>
-            <button id="register-button" type="submit">Registrate</button>
+            <a id="register-button" (click)="userService.register(registerForm.value)" type="submit">Registrate</a>
         </form>
         <div class="register-footer">
             <p>¿Ya tienes cuenta? <a href="login">Inicia sesión</a></p>

@@ -17,16 +17,22 @@ export class ContactsService {
         }
       }
     )
+    const resJson: Contact[] = await res.json()
+    this.contactos = resJson
   }
 
   getContactById(){}
 
-  createContact(contactData: Omit<Contact, 'id'>){
+  async createContact(contactData: Omit<Contact, 'id'>) {
     const nuevoContacto: Contact = {
       ...contactData,
       id: Math.random().toString()
     };
-
+    try {
+      const response = await fetch('https://agenda-api.somee.com/api/Contacts');
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
     this.contactos.push(nuevoContacto);
   }
 

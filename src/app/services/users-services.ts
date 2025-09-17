@@ -6,12 +6,13 @@ import { NewUser } from "../interfaces/user";
 })
 export class UsersServices{
   async register(registerData:NewUser){
-    return await fetch("",
+    return await fetch("https://agenda-api.somee.com/api/Users",
       {
         method:"POST",
         headers: {
           "Content-Type": "application/json"
-        }
+        },
+        body: JSON.stringify(registerData)
       }
     );
   }

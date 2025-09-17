@@ -22,16 +22,16 @@ export const routes: Routes = [
     {
         path: "",
         component: LoggedLayouts,
+        canActivateChild: [onlyLoggedUserGuard],
         children: [
             {
                 path: "contact-pages",
                 component: ContactPages,
-                canActivateChild: [onlyLoggedUserGuard]
+
             },
             {
                 path: "contact-details",
                 component: ContactDetailsPage,
-                canActivateChild: [onlyLoggedUserGuard]
             },
         ]
     },

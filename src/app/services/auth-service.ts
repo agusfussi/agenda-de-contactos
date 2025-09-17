@@ -21,7 +21,7 @@ export class AuthService {
       }
     )
    if (res.ok) {
-      this.router.navigate(["/"])
+      this.router.navigate(["/contact-pages"])
       this.token = await res.text();
       localStorage.setItem("token", this.token);
     }
@@ -30,8 +30,8 @@ export class AuthService {
 
 
   logeout() {
-    this.token = null
-    this.router.navigate(["/login"])
+    localStorage.clear();
+    this.router.navigate(["/login"]);
   }
 
   getToken() {
