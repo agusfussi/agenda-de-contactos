@@ -1,7 +1,13 @@
 <div class="centro">
-    <Div><h2>Nuevo contacto</h2></Div>
+    <div>
+        @if(idContacto()){
+            <h2>Editar Contacto</h2>
+        }@else{
+            <h2>Nuevo contacto</h2>
+        }
+    </div>
     <div class="borde-circular" id="new-contact-form">
-        <form (ngSubmit)="contactService.createContact(newContactForm.value)" #newContactForm="ngForm">
+        <form (ngSubmit)="editContact(newContactForm)" #newContactForm="ngForm">
             <div>
                 <label for="firstName">Nombre</label>
                 <input id="firstName" name="firstName" ngModel type="text">
@@ -31,7 +37,7 @@
                 <input id="image" type="text" ngModel>
             </div>
             <div>
-                <button (click)="createContact(newContactForm.value)" id="add-contact-button"
+                <button [disabled]="newContactForm.invalid" id="add-contact-button"
                     class="fondo-azulclaro">+</button>
             </div>
         </form>

@@ -2,15 +2,17 @@
 
 <table>
     <tr>
-        <td>{{contacto().firstName}}</td>
+        <a href=""><td>{{contacto().firstName}}</td></a>
         <td class="center">{{contacto().number}}</td>
         <td>{{contacto().email}}</td>
         <td id="small-cell">✔️</td>
-        <td><button class="fondo-azulclaro" (click)="contactService.deleteContact(contacto().id)">-</button></td>
+        <td><button class="fondo-azulclaro" (click)="contactService.deleteContact(contacto().id)">-</button>
+            <a [routerLink]="['/edit-contact/',contacto().id,]">Editar</a>
+        </td>
     </tr>
 </table>
 
-
+    
 <!-- lista original hecha en clases
 <li>
     <span>{{contacto().firstName}}</span>

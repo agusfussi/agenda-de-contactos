@@ -3,19 +3,14 @@
     <header>
 
     </header>
-    <div id="mySidebar" class="sidebar" [ngStyle]="{ 'width': isSidebarOpen ? '250px' : '0' }">
+    <div id="mySidebar" class="sidebar" [ngStyle]="{ 'width': isSidebarOpen ? '250px' : '0' }">     <p>Agenda de Contactos</p>
         <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
         <ul>
             <li>
                 <a href="contact-pages">Home</a>
             </li>
-            <br>
             <li>
-                <a href="contact-details">Contacts-Detail-page</a>
-            </li>
-            <br>
-            <li>
-                <a href="/login">Login</a>
+                <a href="">Grupos</a>
             </li>
             <li>
                 <a (click)="authService.logeout()" href="/login">logout</a>
@@ -23,7 +18,7 @@
         </ul>
     </div>
     <div id="main" >
-        <button class="openbtn" (click)="openNav()">&#9776; Open Sidebar</button>
+        <button class="openbtn" (click)="openNav()">&#9776;</button>
     </div>
 </div>
 <router-outlet />

@@ -15,25 +15,10 @@ import { FormsModule } from '@angular/forms';
 })
 export class ContactPages implements OnInit {
  ngOnInit(): void {
-    this.contactService.getContacts
+    this.contactService.getContacts();
  }
 
  authService = inject(AuthService)
 
  contactService = inject(ContactsService)
- 
- createContact(form:any){
-    const nuevoContacto: NewContact ={
-      firstName: form.firstName,
-      lastName: form.lastName,
-      addres: form.address,
-      email: form.email,
-      image: form.image,
-      number: form.number,
-      company: form.company,
-      isFavorite: form.isFavorite
-    }
-
-    this.contactService.createContact(nuevoContacto)
-}
 }

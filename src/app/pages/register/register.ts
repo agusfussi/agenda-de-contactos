@@ -31,5 +31,7 @@ export class Register {
     }
     this.isLoading = false
     this.errorRegister = true
+    this.router.navigate(["/login"]);
   }
+  
 }
