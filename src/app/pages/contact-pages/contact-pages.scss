@@ -32,14 +32,18 @@ td {
     border-radius: 15px;
 }
 
+a{
+    text-decoration: none;
+}
+
 #add-contact-button {
     color: #fff;
     font-size: larger;
     border-radius: 25px;
     border-style: none;
     position: relative;
-    left: 1100px;
-    bottom: 65px;
+    left: 82%;
+    bottom: 100%;
     margin: 0;
     padding: 12px;
 }

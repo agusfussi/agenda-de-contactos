@@ -6,6 +6,7 @@ import { LoggedLayouts } from './layouts/logged-layouts/logged-layouts';
 import { Register } from './pages/register/register';
 import { onlyPublicUserGuard } from './guards/only-public-user-guard';
 import { onlyLoggedUserGuard } from './guards/only-logged-user-guard';
+import { CreateContact } from './pages/create-contact/create-contact';
 //import { Register } from './pages/register/register';
 
 export const routes: Routes = [
@@ -32,6 +33,10 @@ export const routes: Routes = [
             {
                 path: "contact-details",
                 component: ContactDetailsPage,
+            },
+            {
+                path: "create-contacts",
+                component: CreateContact,
             },
         ]
     },

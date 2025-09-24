@@ -10,6 +10,12 @@
                 <th>Acciones</th>
             </tr>
         </table>
-
+        <a href="/create-contacts" id="add-contact-button" class="fondo-azulclaro">+</a>
+    <ul>
+        @for (contacto of contactService.contactos; track $index) {
+        <app-contact-list-item [contacto]="contacto"></app-contact-list-item>
+        }
+    </ul>
+    
         </div>
 </body>

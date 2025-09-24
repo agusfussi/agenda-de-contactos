@@ -11,8 +11,6 @@ table {
     overflow: hidden;
     /* hace que los bordes redondeados se apliquen bien */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-    left: 15px;
 }
 
 th {
@@ -28,8 +26,14 @@ td {
     text-align: left;
 }
 
-.borde-circular{
+.borde-circular {
     border-radius: 15px;
+}
+
+.centro {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px; 
 }
 
 #add-contact-button {
@@ -38,8 +42,8 @@ td {
     border-radius: 25px;
     border-style: none;
     position: relative;
-    left: 1100px;
-    bottom: 65px;
+    left: 50px;
+
     margin: 0;
     padding: 12px;
 }
@@ -109,5 +113,5 @@ form input:focus {
 
 button:hover {
     background-color: #5a4bcf;
-    transition:0.3s ease;
+    transition: 0.3s ease;
 }

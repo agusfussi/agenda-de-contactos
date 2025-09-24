@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
-import { Contact } from '../interfaces/contact';
+import { inject, Injectable } from '@angular/core';
+import { Contact, NewContact } from '../interfaces/contact';
+import { AuthService } from './auth-service';
 
 @Injectable({
   providedIn: 'root'
@@ -7,13 +8,15 @@ import { Contact } from '../interfaces/contact';
 export class ContactsService {
   [x: string]: any;
 
+  auth = inject(AuthService)
+
   contactos: Contact[] = []
 
-  async getContacts(){
-    const res = await fetch("https://agenda-api.somee.com/api/contacts",
+  async getContacts() {
+    const res = await fetch("https://agenda-api.somee.com/api/Contacts",
       {
-        headers:{
-          Authorization: "Bearer "+this['authService'].token,
+        headers: {
+          Authorization: "Bearer " + this['authService'].token,
         }
       }
     )
@@ -21,27 +24,37 @@ export class ContactsService {
     this.contactos = resJson
   }
 
-  getContactById(){}
+  getContactById() { }
 
-  async createContact(contactData: Omit<Contact, 'id'>) {
+
+  async createContact(contactData: NewContact) {
     const nuevoContacto: Contact = {
       ...contactData,
       id: Math.random().toString()
     };
-    try {
-      const response = await fetch('https://agenda-api.somee.com/api/Contacts');
-    } catch (error) {
-      console.error('Error fetching data:', error);
+    const res = await fetch('https://agenda-api.somee.com/api/Contacts',
+      {
+        method: "POST",
+        headers: {
+          Authorization: "Bearer " + this.auth.token,
+        },
+        body: JSON.stringify(contactData)
+      }
+    );
+    if (res.ok) {
+      const resultado = await res.json();
+      return true;
+    } else {
+      return false;
     }
-    this.contactos.push(nuevoContacto);
   }
 
-  editContact(){}
+  editContact() { }
 
-  deleteContact(id:string){
+  deleteContact(id: string) {
     this.contactos = this.contactos.filter(contact => contact.id !== id)
   }
 
-  setFavourite(){}
+  setFavourite() { }
 }
 
