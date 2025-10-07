@@ -1,5 +1,7 @@
 <div class="centro">
-    <Div><h2>Nuevo contacto</h2></Div>
+    <Div>
+        <h2>Nuevo contacto</h2>
+    </Div>
     <div class="borde-circular" id="new-contact-form">
         <form (ngSubmit)="contactService.createContact(newContactForm.value)" #newContactForm="ngForm">
             <div>
@@ -31,8 +33,14 @@
                 <input id="image" type="text" ngModel>
             </div>
             <div>
-                <button (click)="createContact(newContactForm.value)" id="add-contact-button"
-                    class="fondo-azulclaro">+</button>
+                <button id="add-contact-button" class="fondo-azulclaro" [disabled]="isLoading"
+                    (click)="createContact(newContactForm.value)">
+                    @if (isLoading) {
+                    <app-spinner></app-spinner>
+                    } @else {
+                    +
+                    }
+                </button>
             </div>
         </form>
     </div>
