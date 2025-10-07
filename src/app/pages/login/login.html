@@ -22,13 +22,10 @@
                 <a class="margin-down-12" href="register">registrate acá</a><!-- aca va el link al register -->
                 <div class="centrado ">
                     <!-- va a remplazar al link en un futuro <input  class="imput-btns border-circular small-button" href="contact-pages" type="button" value="login"> -->
-                    <button class="imput-btns border-circular small-button positionflex-input" value="login" type="submit">Login</button>
-                    @if(isLoading){
-                    <app-spinner *ngIf="isLoading"></app-spinner>
-                    }
-                    @if (errorLogin) {
-                    <p class="error">Datos de sesión incorrectos, intente nuevamente.</p>
-                    }
+                    <button class="imput-btns border-circular small-button positionflex-input"
+                        [disabled]="isLoading || loginForm.invalid" value="login" type="submit">
+                        @if (isLoading) {<app-spinner></app-spinner>} @else {Login}</button>
+                    @if (errorLogin) {<p class="error">Datos de sesión incorrectos, intente nuevamente.</p>}
                 </div>
             </form>
         </div>
