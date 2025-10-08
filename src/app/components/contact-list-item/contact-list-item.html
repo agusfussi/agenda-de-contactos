@@ -6,7 +6,7 @@
         <td class="center">{{contacto().number}}</td>
         <td>{{contacto().email}}</td>
         <td id="small-cell">✔️</td>
-        <td><button class="fondo-azulclaro" (click)="contactService.deleteContact(contacto().id)">-</button>
+        <td><button class="fondo-azulclaro" (click)="opendeletemodal()">-</button>
             <a [routerLink]="['/edit-contact/',contacto().id,]">Editar</a>
         </td>
     </tr>
