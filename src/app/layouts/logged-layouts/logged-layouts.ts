@@ -8,7 +8,7 @@ import Swal from 'sweetalert2'
 @Component({
   selector: 'app-logged-layouts',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, RouterLink],
   templateUrl: './logged-layouts.html',
   styleUrls: ['./logged-layouts.scss']
 })

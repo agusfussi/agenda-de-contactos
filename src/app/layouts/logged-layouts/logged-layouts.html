@@ -7,13 +7,13 @@
         <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
         <ul>
             <li>
-                <a href="contact-pages">Home</a>
+                <a routerLink="contact-pages">Home</a>
             </li>
             <li>
-                <a href="">Grupos</a>
+                <a routerLink="">Grupos</a>
             </li>
             <li>
-                <a (click)="openLogoutModal()" href="/login">logout</a><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                <a (click)="openLogoutModal()" routerLink="/login">logout</a><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
             </li>
         </ul>
