@@ -1,20 +1,24 @@
 //https://www.w3schools.com/css/css_navbar_vertical.asp
 
-li{
+li {
   list-style: none;
 }
 
+p {
+  text-align: center;
+}
+
 .sidebar {
-  height: 100%; 
-  width: 0; 
-  position: fixed; 
-  z-index: 1; 
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111; 
+  background-color: #111;
   overflow-x: hidden;
-  padding-top: 60px; 
-  transition: 0.5s; 
+  padding-top: 60px;
+  transition: 0.5s;
 }
 
 /* The sidebar links */
@@ -65,13 +69,18 @@ li{
   margin-left: 0;
 }
 
-p{
+p {
   font-size: 16px;
   color: #818181;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
+  .sidebar {
+    padding-top: 15px;
+  }
+
+  .sidebar a {
+    font-size: 18px;
+  }
 }
