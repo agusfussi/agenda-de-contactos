@@ -25,6 +25,7 @@ export class ContactsService {
     const resJson: Contact[] = await res.json()
     this.contactos = resJson
   }
+  
   //////////////////////////////////////////////////////////////////////
   async getContactById(id: string | number){
     const res = await fetch(this.URL_BASE + "/" + id,
@@ -38,7 +39,6 @@ export class ContactsService {
     const contact: Contact = await res.json();
     return contact;
   }
-
 
   //////////////////////////////////////////////////////////////////////
   async createContact(contactData: NewContact) {
