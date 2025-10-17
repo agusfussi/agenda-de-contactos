@@ -13,8 +13,8 @@
                 <input id="firstName" name="firstName" ngModel type="text">
             </div>
             <div>
-                <label for="surname">Apellido</label>
-                <input id="surname" name="lastName" type="text" ngModel>
+                <label for="lastName">Apellido</label>
+                <input id="lastName" name="lastName" type="text" ngModel>
             </div>
             <div>
                 <label for="direction">Direccion</label>
@@ -34,7 +34,7 @@
             </div>
             <div>
                 <label for="image">URL de Imagen</label>
-                <input id="image" type="text" ngModel>
+                <input id="image" type="text" name="image" ngModel>
             </div>
             <div>
                 <button [disabled]="newContactForm.invalid" id="add-contact-button"

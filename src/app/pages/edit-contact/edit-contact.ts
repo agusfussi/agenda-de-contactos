@@ -21,7 +21,7 @@ export class EditContact implements OnInit {
   async ngOnInit() {
     if (this.idContacto()) {
       this.contactoOriginal = await this.contactsService.getContactById(this.idContacto()!);
-      this.form()?.setValue({
+      this.form()?.form.patchValue({
         firstName: this.contactoOriginal!.firstName,
         lastName: this.contactoOriginal!.lastName,
         address: this.contactoOriginal!.address,
