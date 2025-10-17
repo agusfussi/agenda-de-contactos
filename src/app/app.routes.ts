@@ -9,8 +9,14 @@ import { onlyLoggedUserGuard } from './guards/only-logged-user-guard';
 import { CreateContact } from './pages/create-contact/create-contact';
 import { EditContact } from './pages/edit-contact/edit-contact';
 //import { Register } from './pages/register/register';
+// Repo de donde enconte lo de patchmach https://angular.dev/guide/routing/redirecting-routes?utm_source=chatgpt.com
 
 export const routes: Routes = [
+    {
+        path: "",
+        redirectTo: "login",
+        pathMatch: "full"   // solo se activa si la URL está vacía
+    },
     {
         path: "login",
         component: Login,
