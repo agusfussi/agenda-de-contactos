@@ -26,7 +26,7 @@ export class CreateContact {
   contactService = inject(ContactsService)
   isLoading = false;
 
-  createContact(form: any) {
+  async createContact(form: any) {
     this.isLoading = true;
     const nuevoContacto: NewContact = {
       firstName: form.firstName,
@@ -38,8 +38,14 @@ export class CreateContact {
       company: form.company,
       isFavorite: form.isFavorite
     }
-    this.router.navigate(["/contact-pages"])
-
-    this.contactService.createContact(nuevoContacto)
+    try {
+      await this.contactService.createContact(nuevoContacto);
+      // Una vez creado, navegamos
+      this.router.navigate(["/contact-pages"]);
+    } catch (error) {
+      console.error("Error creando contacto:", error);
+    } finally {
+      this.isLoading = false;
+    }
   }
 }

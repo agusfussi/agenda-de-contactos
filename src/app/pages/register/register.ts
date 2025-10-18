@@ -3,10 +3,11 @@ import { Router, RouterModule, } from '@angular/router';
 import { AuthService } from '../../services/auth-service';
 import { FormsModule } from '@angular/forms';
 import { UsersServices } from '../../services/users-services';
+import { Spinner } from '../../components/spinner/spinner';
 
 @Component({
   selector: 'app-register',
-  imports: [RouterModule, FormsModule],
+  imports: [RouterModule, FormsModule, Spinner],
   templateUrl: './register.html',
   styleUrl: './register.scss'
 })
@@ -20,18 +21,32 @@ export class Register {
   async register(form: any) {
     console.log(form.value);
     this.errorRegister = false;
-    if (!form.email || !form.password) {
+    if (!form.value.email ||
+      !form.value.password ||
+      !form.value.password2 ||
+      !form.value.firstName ||
+      !form.value.lastName ||
+      form.value.password !== form.value.password2) {
       this.errorRegister = true;
       return
     }
-    this.isLoading = true
-    const res = await this.userService.register(form.value);
-    if(res.ok){
-      this.router.navigate(["/login"])
+    this.isLoading = true;
+    try {
+      const res = await this.userService.register(form.value);
+      console.log('Respuesta del servicio:', res);
+
+      // 'res' may be a Fetch Response (has ok) or a custom object (has success)
+      if (res && ((res as any).ok || (res as any).success)) {
+        console.log('Navegando al login...');
+        await this.router.navigate(['/login']);
+      } else {
+        this.errorRegister = true;
+      }
+    } catch (err) {
+      console.error('Register error:', err);
+      this.errorRegister = true;
+    } finally {
+      this.isLoading = false;
     }
-    this.isLoading = false
-    this.errorRegister = true
-    this.router.navigate(["/login"]);
   }
-  
 }

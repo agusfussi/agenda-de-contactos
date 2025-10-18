@@ -1,9 +1,9 @@
 <div class="centrado flexcentrado">
     <div>
         @if(idContacto()){
-            <h2 class="centrado">Editar Contacto</h2>
+        <h2 class="centrado">Editar Contacto</h2>
         }@else{
-            <h2>Nuevo contacto</h2>
+        <h2>Nuevo contacto</h2>
         }
     </div>
     <div class="borde-circular" id="new-contact-form">
@@ -37,8 +37,14 @@
                 <input id="image" type="text" name="image" ngModel>
             </div>
             <div>
-                <button [disabled]="newContactForm.invalid" id="add-contact-button"
-                    class="fondo-azulclaro">+</button>
+                <button [disabled]="newContactForm.invalid || isLoading" id="add-contact-button"
+                    class="fondo-azulclaro">
+                    @if (isLoading) {
+                    <app-spinner></app-spinner>
+                    } @else {
+                    +
+                    }
+                </button>
             </div>
         </form>
     </div>
