@@ -25,9 +25,9 @@ export class ContactsService {
     const resJson: Contact[] = await res.json()
     this.contactos = resJson
   }
-  
+
   //////////////////////////////////////////////////////////////////////
-  async getContactById(id: string | number){
+  async getContactById(id: string | number) {
     const res = await fetch(this.URL_BASE + "/" + id,
       {
         method: "GET",
@@ -77,12 +77,17 @@ export class ContactsService {
         body: JSON.stringify(contact)
       }
     );
-    if (!res.ok) return;
+    if (!res.ok) return null;
+    if (res.status === 204) {
+      this.contactos = this.contactos.map((c) =>
+        c.id === contact.id ? contact : c
+      );
+      return contact;
+    }
     const resultado: Contact = await res.json();
-    this.contactos = this.contactos.map(contact => {
-      if (contact.id === resultado.id) { return resultado };
-      return contact
-    });
+    this.contactos = this.contactos.map((c) =>
+      c.id === resultado.id ? resultado : c
+    );
     return resultado
   }
   ////////////////////////////////////////////////////////////////////////////////

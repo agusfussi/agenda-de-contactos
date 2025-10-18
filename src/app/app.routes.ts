@@ -38,7 +38,7 @@ export const routes: Routes = [
 
             },
             {
-                path: "contact-details",
+                path: "contact-details/:idContacto",
                 component: ContactDetailsPage,
             },
             {

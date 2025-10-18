@@ -17,6 +17,7 @@ export class EditContact implements OnInit {
   idContacto = input<number>();
   contactoOriginal: Contact | undefined = undefined;
   form = viewChild<NgForm>('newContactForm');
+  isLoading = false;
 
   async ngOnInit() {
     if (this.idContacto()) {
@@ -49,10 +50,15 @@ export class EditContact implements OnInit {
       isFavorite: form.value.isFavorite
     }
 
-    const res = await this.contactsService.editContact({ ...contactoEditado, id: this.idContacto()!.toString() });
+    let res;
+    // const res = await this.contactsService.createContact(nuevoContacto);
+    this.isLoading = true;
+    res = await this.contactsService.editContact({ ...contactoEditado, id: this.idContacto()!.toString() });
+    this.isLoading = false;
     if (!res) {
       this.errorEnBack = true;
-      this.router.navigate(["/contact-pages"]);
+      return
     };
+    this.router.navigate(["/contact-pages"]);
   }
 }

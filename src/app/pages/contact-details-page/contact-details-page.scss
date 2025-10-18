@@ -2,3 +2,109 @@
 body{
     margin-left: 150px;
 }
+
+body {
+    margin-left: 150px;
+}
+
+.flexcentrado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+table {
+    table-layout: fixed;
+    width: 60%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    /* hace que los bordes redondeados se apliquen bien */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+th {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 12px;
+}
+
+/* Celdas */
+td {
+    padding: 10px 15px;
+    text-align: left;
+}
+
+.borde-circular {
+    border-radius: 15px;
+}
+
+.centro {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#add-contact-button {
+    color: #fff;
+    background-color: #6c5ce7;
+    border-radius: 25px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s ease;
+}
+
+div {
+    height: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 350px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1b2140;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+}
+
+form label {
+    align-self: flex-start;
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: -6px;
+}
+
+form input {
+    width: 100%;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+form input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #6c5ce7; // violeta en vez de verde
+}
+
+
+#add-contact-button:hover {
+    background-color: #5a4bcf;
+}
+
+
+.link-detalle {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}

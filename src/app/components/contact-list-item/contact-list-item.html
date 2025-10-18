@@ -2,7 +2,9 @@
 
 <table>
     <tr>
-        <a href=""><td>{{contacto().firstName}}</td></a>
+        <td>
+            <a [routerLink]="['/contact-details/',contacto().id,]">{{contacto().firstName}}</a>
+        </td>
         <td class="center">{{contacto().number}}</td>
         <td>{{contacto().email}}</td>
         <td id="small-cell">✔️</td>
