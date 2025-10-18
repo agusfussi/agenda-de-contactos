@@ -21,9 +21,10 @@ export class AuthService {
       }
     )
    if (res.ok) {
-      this.router.navigate(["/contact-pages"])
+      
       this.token = await res.text();
       localStorage.setItem("token", this.token);
+      this.router.navigate(["/contact-pages"])
     }
     console.log("Respuesta del back", res);
   }

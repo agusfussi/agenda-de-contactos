@@ -6,26 +6,26 @@ import { Spinner } from '../../components/spinner/spinner';
 
 @Component({
   selector: 'app-login-page',
-  imports: [RouterModule,FormsModule, Spinner],
+  imports: [RouterModule, FormsModule, Spinner],
   templateUrl: './login.html',
   styleUrl: './login.scss'
 })
-export class Login{
+export class Login {
 
   errorLogin = false;
   authService = inject(AuthService);
   isLoading = false
 
-  async login(form:any){
-    console.log(form.value)
+  async login(form: any) {
     this.errorLogin = false;
-    if(!form.value.email || !form.value.password){
+    console.log(form.value)
+    if (!form.value.email || !form.value.password) {
       this.errorLogin = true;
       return
     }
     this.isLoading = true;
-    await this.authService.login(form.value);
-    this.errorLogin = true;
-    this.isLoading = false;
+      await this.authService.login(form.value);
+      this.errorLogin = true;
+      this.isLoading = false;
   }
 }
