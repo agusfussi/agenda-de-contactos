@@ -12,7 +12,7 @@ import { Spinner } from '../../components/spinner/spinner';
 
 @Component({
   selector: 'app-create-contact',
-  imports: [ContactListItem, CommonModule, FormsModule, RouterModule, Spinner],
+  imports: [CommonModule, FormsModule, RouterModule, Spinner],
   templateUrl: './create-contact.html',
   styleUrl: './create-contact.scss'
 })
