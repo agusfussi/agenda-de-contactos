@@ -1,8 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { ContactListItem } from "../../components/contact-list-item/contact-list-item";
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { ContactsService } from '../../services/contacts-service';
 import { AuthService } from '../../services/auth-service';
 import { NewContact } from '../../interfaces/contact';
@@ -38,9 +36,12 @@ export class CreateContact {
       company: form.company,
       isFavorite: form.isFavorite
     }
+      console.log("Nuevo contacto:", nuevoContacto); 
     try {
-      await this.contactService.createContact(nuevoContacto);
-      // Una vez creado, navegamos
+      const res = await this.contactService.createContact(nuevoContacto);
+      if(form.isFavorite){
+        await this.contactService.setFavourite(res.id)
+      }
       this.router.navigate(["/contact-pages"]);
     } catch (error) {
       console.error("Error creando contacto:", error);

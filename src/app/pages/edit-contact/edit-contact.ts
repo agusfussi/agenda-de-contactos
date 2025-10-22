@@ -39,6 +39,8 @@ export class EditContact implements OnInit {
 
   async editContact(form: NgForm) {
     this.errorEnBack = false;
+    const wasFav = this.contactoOriginal!.isFavorite
+    const newFaw = form.value.isFavorite
     const contactoEditado: Contact = {
       id: this.contactoOriginal!.id,
       firstName: form.value.firstName,
@@ -60,6 +62,9 @@ export class EditContact implements OnInit {
       this.errorEnBack = true;
       return
     };
+    if (wasFav != newFaw){
+      await this.contactsService.setFavourite(this.idContacto()!.toString())
+    }
     this.router.navigate(["/contact-pages"]);
   }
 }

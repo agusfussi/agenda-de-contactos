@@ -58,7 +58,7 @@ export class ContactsService {
     );
     if (res.ok) {
       const resultado = await res.json();
-      return true;
+      return resultado;
     } else {
       return false;
     }
@@ -108,7 +108,7 @@ export class ContactsService {
 
   ////////////////////////////////////////////////////////////////////////////
   async setFavourite(id: string | number) {
-    const res = await fetch(this.URL_BASE + "/" + id + "favorite",
+    const res = await fetch(this.URL_BASE + "/" + id + "/favorite",
       {
         method: "POST",
         headers: {

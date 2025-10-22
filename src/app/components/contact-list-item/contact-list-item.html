@@ -7,14 +7,16 @@
         </td>
         <td class="center">{{contacto().number}}</td>
         <td>{{contacto().email}}</td>
-        <td id="small-cell">✔️</td>
+        <td id="small-cell"> @if (contacto().isFavorite) {
+            ⭐
+            }</td>
         <td><button class="fondo-azulclaro" (click)="opendeletemodal()">-</button>
             <a [routerLink]="['/edit-contact/',contacto().id,]">Editar</a>
         </td>
     </tr>
 </table>
 
-    
+
 <!-- lista original hecha en clases
 <li>
     <span>{{contacto().firstName}}</span>

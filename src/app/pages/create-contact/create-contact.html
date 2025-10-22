@@ -3,7 +3,7 @@
 </Div>
 <div class="page-container">
     <div class="borde-circular" id="new-contact-form">
-        <form (ngSubmit)="contactService.createContact(newContactForm.value)" #newContactForm="ngForm">
+        <form  #newContactForm="ngForm">
             <div>
                 <label for="firstName">Nombre</label>
                 <input id="firstName" name="firstName" ngModel type="text">
@@ -25,12 +25,12 @@
                 <input id="phone" name="number" type="text" ngModel>
             </div>
             <div>
-                <label for="company">Empresa</label>
-                <input id="company" name="company" type="checkbox" ngModel>
+                <label for="isFavorite">Favorito</label>
+                <input id="isFavorite" name="isFavorite" type="checkbox" ngModel>
             </div>
             <div>
                 <label for="image">URL de Imagen</label>
-                <input id="image" type="text" ngModel>
+                <input id="image" name="image" type="text" ngModel>
             </div>
             <div>
                 <button id="add-contact-button" class="fondo-azulclaro" [disabled]="isLoading"

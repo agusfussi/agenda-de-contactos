@@ -7,7 +7,7 @@ export interface Contact {
     id: string,
     image: string,
     isFavorite?: boolean,// es opional
-    company: string,
+    company?: string,
 }
 
 export type NewContact = Omit<Contact, "id">
